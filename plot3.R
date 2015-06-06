@@ -75,16 +75,12 @@ plot3<-function(dir.working = "./", output.file.name="plot3.png", image.width=48
     # again, there are multiple ways to deal with date and time here. one of the ways is to combine Date and Time variables into
     # single vector of dates and use it
     timestamp<-strptime(paste(ds$Date, ds$Time), "%d/%m/%Y %H:%M:%S");
-    
-    
-    # again, there are multiple ways to deal with date and time here. one of the ways is to combine Date and Time variables into
-    # single vector of dates and use it
-    timestamp<-strptime(paste(ds$Date, ds$Time), "%d/%m/%Y %H:%M:%S");
-    
-    
+        
     # generate image -- add three variables to the same plot
     #
-    png(output.file.name, width=image.width, height=image.height);
+    png(output.file.name, width=image.width, height=image.height, bg="transparent");
+    # -- set plot properties
+    par(mar=c(5,5,5,2));    
     
     with(dataset, plot(timestamp, Sub_metering_1, type = "n", ylab="Energy sub metering", xlab="") );
     with(dataset, lines(timestamp, Sub_metering_1, col = "black"));

@@ -76,10 +76,9 @@ plot4<-function(dir.working = "./", output.file.name="plot4.png", image.width=64
     # single vector of dates and use it
     timestamp<-strptime(paste(ds$Date, ds$Time), "%d/%m/%Y %H:%M:%S");
     
-
     # generate image
-    png(output.file.name, width=image.width, height=image.height);
-    # -- set image properties
+    png(output.file.name, width=image.width, height=image.height, bg="transparent");
+    # -- set plot properties
     par(mfrow=c(2, 2), mar=c(4,6,4,6));
     
     # -- draw plots one by one

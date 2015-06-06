@@ -77,7 +77,9 @@ plot2<-function(dir.working = "./", output.file.name="plot2.png", image.width=48
     timestamp<-strptime(paste(ds$Date, ds$Time), "%d/%m/%Y %H:%M:%S");
         
     # generate image
-    png(output.file.name, width=image.width, height=image.height);
+    png(output.file.name, width=image.width, height=image.height, bg="transparent");
+    # -- set plot properties
+    par(mar=c(5,5,5,2));    
     plot(timestamp, ds$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)");
     dev.off();
     
