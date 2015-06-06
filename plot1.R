@@ -74,9 +74,6 @@ plot1<-function(dir.working = "./", output.file.name="plot1.png", image.width=48
 
     # generate image
     png(output.file.name, width=image.width, height=image.height, bg="transparent");
-    # -- set plot properties
-    par(mar=c(5,5,5,2));    
-    
 
     hist(as.numeric(as.vector(ds$Global_active_power)), main="Global Active Power", col="red", xlab="Global Active Power (kilowatts)");
     dev.off();
